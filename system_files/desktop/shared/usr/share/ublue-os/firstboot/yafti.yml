@@ -58,11 +58,6 @@ screens:
           default: false
           packages:
           - Retrieve Wootility: ujust get-wootility
-        Resilio Sync:
-          description: A file synchronization utility powered by BitTorrent
-          default: false
-          packages:
-          - Install Resilio Sync: ujust install-resilio-sync
         scrcpy:
           description: scrcpy provides display and control of Android devices connected on USB (or over TCP/IP)
           default: false

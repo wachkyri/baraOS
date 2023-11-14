@@ -96,11 +96,6 @@ screens:
           default: false
           packages:
           - Install OpenTabletDriver: ujust install-opentabletdriver
-        Resilio Sync:
-          description: A file synchronization utility powered by BitTorrent
-          default: false
-          packages:
-          - Install Resilio Sync: ujust install-resilio-sync
         scrcpy:
           description: scrcpy provides display and control of Android devices connected on USB (or over TCP/IP)
           default: false

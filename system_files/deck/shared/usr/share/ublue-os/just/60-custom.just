@@ -463,17 +463,6 @@ install-solaar: distrobox-check-fedora
   cp ~/.local/share/applications/fedora-solaar.desktop ~/.config/autostart/fedora-solaar.desktop && \
   sed -i 's/fedora --   solaar/fedora --   solaar --window=hide/g' ~/.config/autostart/fedora-solaar.desktop
 
-# Install Resilio Sync, a file synchronization utility powered by BitTorrent
-install-resilio-sync: distrobox-check-fedora
-  distrobox-enter -n fedora -- 'sudo rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc' && \
-  distrobox-enter -n fedora -- 'sudo wget https://raw.githubusercontent.com/ublue-os/bazzite/main/post_install_files/resilio_sync/resilio-sync.repo -O /etc/yum.repos.d/resilio-sync.repo' && \
-  distrobox-enter -n fedora -- 'sudo dnf install -y resilio-sync' && \
-  mkdir -p ~/.config/systemd/user/ && \
-  rm -f ~/.config/systemd/user/fedora-resilio-sync.service && \
-  wget https://raw.githubusercontent.com/ublue-os/bazzite/main/post_install_files/resilio_sync/fedora-resilio-sync.service -O ~/.config/systemd/user/fedora-resilio-sync.service && \
-  systemctl --user daemon-reload && \
-  systemctl enable --user --now fedora-resilio-sync.service
-
 # Install scrcpy, a utility that mirrors Android devices (video and audio) connected via USB or over TCP/IP
 install-scrcpy: distrobox-check-fedora
   distrobox enter -n fedora -- bash -c 'sudo dnf copr enable -y zeno/scrcpy && \
