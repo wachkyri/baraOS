@@ -44,7 +44,7 @@ jobs:
       matrix:
         image_flavor: [main] # [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
         base_name: [bazzite] # [bazzite, bazzite-deck]
-        base_image_name: [silverblue] # [kinoite, silverblue]
+        base_image_name: [kinoite, silverblue] # [kinoite, silverblue]
         major_version: [39]
         include:
           - major_version: 39
