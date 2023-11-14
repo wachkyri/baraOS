@@ -1,24 +1,24 @@
 # vim: set ft=make :
 
 # Remove all waydroid-related files in your user folders
-reset-waydroid:
-  bash -c 'sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid'
+# reset-waydroid:
+#   bash -c 'sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid'
 
 # Quickly initialize a waydroid image
-init-waydroid:
-  #!/usr/bin/env bash
-  sudo waydroid init -c 'https://ota.waydro.id/system' -v 'https://ota.waydro.id/vendor'
+# init-waydroid:
+#   #!/usr/bin/env bash
+#   sudo waydroid init -c 'https://ota.waydro.id/system' -v 'https://ota.waydro.id/vendor'
 
 # Launch Waydroid configuration helper
-configure-waydroid:
-  #!/usr/bin/env bash
-  git clone https://github.com/casualsnek/waydroid_script.git --depth 1 /tmp/waydroid_script
-  python -m venv /tmp/waydroid_script/venv
-  source /tmp/waydroid_script/venv/bin/activate
-  sudo pip install -r /tmp/waydroid_script/requirements.txt
-  sudo /tmp/waydroid_script/main.py
-  deactivate
-  sudo rm -rf /tmp/waydroid_script
+# configure-waydroid:
+#   #!/usr/bin/env bash
+#   git clone https://github.com/casualsnek/waydroid_script.git --depth 1 /tmp/waydroid_script
+#   python -m venv /tmp/waydroid_script/venv
+#   source /tmp/waydroid_script/venv/bin/activate
+#   sudo pip install -r /tmp/waydroid_script/requirements.txt
+#   sudo /tmp/waydroid_script/main.py
+#   deactivate
+#   sudo rm -rf /tmp/waydroid_script
 
 # Install CoreCtrl for overclocking & undervolting AMD GPUs
 install-corectrl:
@@ -154,55 +154,6 @@ patch-gmod:
   /tmp/patch-gmod/GModCEFCodecFix-Linux
   rm -rf /tmp/patch-gmod
 
-# Activate Valve-inspired Vapor theme on GNOME
-enable-vapor-theme:
-  #!/usr/bin/env bash
-  IMAGE_INFO="/usr/share/ublue-os/image-info.json"
-  BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
-  if [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
-    gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
-    gsettings set org.gnome.mutter center-new-windows true
-    gsettings set org.gnome.desktop.wm.preferences button-layout appmenu:minimize,maximize,close
-    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-    gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-    gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/steamdeck/Steam\ Deck\ Logo\ Default.jpg
-    gsettings set org.gnome.desktop.background picture-uri-dark file:///usr/share/backgrounds/steamdeck/Steam\ Deck\ Logo\ Default.jpg
-    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Noto Sans Medium 11"
-    gsettings set org.gnome.desktop.interface document-font-name "Noto Sans 11"
-    gsettings set org.gnome.desktop.interface font-name "Noto Sans 11"
-    gsettings set org.gnome.desktop.sound theme-name "steam"
-    flatpak run --command=gradience-cli com.github.GradienceTeam.Gradience flatpak-overrides -e both
-    sudo flatpak override --filesystem=xdg-config/gtk-4.0
-    sudo flatpak override --filesystem=xdg-config/gtk-3.0
-    flatpak run --command=gradience-cli com.github.GradienceTeam.Gradience apply -n "Vapor"
-  else
-    echo "This is only supported under GNOME."
-  fi
-
-# Activate Valve-inspired VGUI2 theme on GNOME
-enable-vgui2-theme:
-  #!/usr/bin/env bash
-  IMAGE_INFO="/usr/share/ublue-os/image-info.json"
-  BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
-  if [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
-    gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
-    gsettings set org.gnome.mutter center-new-windows true
-    gsettings set org.gnome.desktop.wm.preferences button-layout appmenu:minimize,maximize,close
-    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-    gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-    gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/steamdeck/VGUI2.jpg
-    gsettings set org.gnome.desktop.background picture-uri-dark file:///usr/share/backgrounds/steamdeck/VGUI2.jpg
-    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Noto Sans Medium 11"
-    gsettings set org.gnome.desktop.interface document-font-name "Noto Sans 11"
-    gsettings set org.gnome.desktop.interface font-name "Noto Sans 11"
-    gsettings set org.gnome.desktop.sound theme-name "steam"
-    flatpak run --command=gradience-cli com.github.GradienceTeam.Gradience flatpak-overrides -e both
-    sudo flatpak override --filesystem=xdg-config/gtk-4.0
-    sudo flatpak override --filesystem=xdg-config/gtk-3.0
-    flatpak run --command=gradience-cli com.github.GradienceTeam.Gradience apply -n "VGUI2"
-  else 
-    echo "This is only supported under GNOME."
-  fi
 
 # Install Adwaita-for-Steam theme for CSS Loader (https://github.com/tkashkin/Adwaita-for-Steam)
 install-adwaita-for-steam:
@@ -347,17 +298,6 @@ install-solaar: distrobox-check-fedora
   mkdir -p ~/.config/autostart && \
   rm -f ~/.config/autostart/fedora-solaar.desktop && \
   cp ~/.local/share/applications/fedora-solaar.desktop ~/.config/autostart/fedora-solaar.desktop
-
-# Install Resilio Sync, a file synchronization utility powered by BitTorrent
-install-resilio-sync: distrobox-check-fedora
-  distrobox-enter -n fedora -- 'sudo rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc' && \
-  distrobox-enter -n fedora -- 'sudo wget https://raw.githubusercontent.com/ublue-os/bazzite/main/post_install_files/resilio_sync/resilio-sync.repo -O /etc/yum.repos.d/resilio-sync.repo' && \
-  distrobox-enter -n fedora -- 'sudo dnf install -y resilio-sync' && \
-  mkdir -p ~/.config/systemd/user/ && \
-  rm -f ~/.config/systemd/user/fedora-resilio-sync.service && \
-  wget https://raw.githubusercontent.com/ublue-os/bazzite/main/post_install_files/resilio_sync/fedora-resilio-sync.service -O ~/.config/systemd/user/fedora-resilio-sync.service && \
-  systemctl --user daemon-reload && \
-  systemctl enable --user --now fedora-resilio-sync.service
 
 # Install scrcpy, a utility that mirrors Android devices (video and audio) connected via USB or over TCP/IP
 install-scrcpy: distrobox-check-fedora

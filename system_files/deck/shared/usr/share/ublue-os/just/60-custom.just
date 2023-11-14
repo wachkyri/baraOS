@@ -9,26 +9,26 @@ toggle-autologin:
   fi
 
 # Remove all waydroid-related files in your user folders
-reset-waydroid:
-  bash -c 'sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid'
-  sudo mkdir -p /var/lib/waydroid
-  sudo bash -c 'printf "[properties]\nro.hardware.gralloc=minigbm_gbm_mesa\npersist.waydroid.udev=true\npersist.waydroid.uevent=true\nro.sf.lcd_density=215" > /var/lib/waydroid/waydroid.cfg'
+# reset-waydroid:
+#   bash -c 'sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid'
+#   sudo mkdir -p /var/lib/waydroid
+#   sudo bash -c 'printf "[properties]\nro.hardware.gralloc=minigbm_gbm_mesa\npersist.waydroid.udev=true\npersist.waydroid.uevent=true\nro.sf.lcd_density=215" > /var/lib/waydroid/waydroid.cfg'
 
 # Quickly initialize a waydroid image
-init-waydroid:
-  #!/usr/bin/env bash
-  sudo waydroid init -c 'https://ota.waydro.id/system' -v 'https://ota.waydro.id/vendor'
+# init-waydroid:
+#   #!/usr/bin/env bash
+#   sudo waydroid init -c 'https://ota.waydro.id/system' -v 'https://ota.waydro.id/vendor'
 
 # Launch Waydroid configuration helper
-configure-waydroid:
-  #!/usr/bin/env bash
-  git clone https://github.com/casualsnek/waydroid_script.git --depth 1 /tmp/waydroid_script
-  python -m venv /tmp/waydroid_script/venv
-  source /tmp/waydroid_script/venv/bin/activate
-  sudo pip install -r /tmp/waydroid_script/requirements.txt
-  sudo /tmp/waydroid_script/main.py
-  deactivate
-  sudo rm -rf /tmp/waydroid_script
+# configure-waydroid:
+#   #!/usr/bin/env bash
+#   git clone https://github.com/casualsnek/waydroid_script.git --depth 1 /tmp/waydroid_script
+#   python -m venv /tmp/waydroid_script/venv
+#   source /tmp/waydroid_script/venv/bin/activate
+#   sudo pip install -r /tmp/waydroid_script/requirements.txt
+#   sudo /tmp/waydroid_script/main.py
+#   deactivate
+#   sudo rm -rf /tmp/waydroid_script
 
 # Install Decky Loader (https://github.com/SteamDeckHomebrew/decky-loader)
 get-decky:

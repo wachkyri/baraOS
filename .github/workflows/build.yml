@@ -11,18 +11,18 @@ on:
       - 'repo_content/**'
       - 'spec_files/**'
       - 'post_install_files/**'
-  push:
-    branches:
-      - main
-      - testing
-      - unstable
-    paths-ignore:
-      - '**.md'
-      - '**.txt'
-      - 'repo_content/**'
-      - 'spec_files/**'
-      - 'post_install_files/**'
-  merge_group:
+  # push:
+  #   branches:
+  #     - main
+  #     - testing
+  #     - unstable
+  #   paths-ignore:
+  #     - '**.md'
+  #     - '**.txt'
+  #     - 'repo_content/**'
+  #     - 'spec_files/**'
+  #     - 'post_install_files/**'
+  # merge_group:
   workflow_dispatch:
 env:
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
@@ -42,9 +42,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_flavor: [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
-        base_name: [bazzite, bazzite-deck]
-        base_image_name: [kinoite, silverblue]
+        image_flavor: [main] # [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
+        base_name: [bazzite] # [bazzite, bazzite-deck]
+        base_image_name: [silverblue] # [kinoite, silverblue]
         major_version: [39]
         include:
           - major_version: 39

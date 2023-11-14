@@ -51,8 +51,8 @@ RUN wget https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$
     wget https://copr.fedorainfracloud.org/coprs/kylegospo/vk_hdr_layer/repo/fedora-$(rpm -E %fedora)/kylegospo-vk_hdr_layer-fedora-$(rpm -E %fedora).repo?arch=x86_64 -O /etc/yum.repos.d/_copr_kylegospo-vk_hdr_layer.repo && \
     wget https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-$(rpm -E %fedora)/ycollet-audinux-fedora-$(rpm -E %fedora).repo -O /etc/yum.repos.d/_copr_ycollet-audinux.repo && \
     wget https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-$(rpm -E %fedora)/kylegospo-rom-properties-fedora-$(rpm -E %fedora).repo -O /etc/yum.repos.d/_copr_kylegospo-rom-properties.repo && \
-    wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo && \
-    sed -i 's@gpgcheck=1@gpgcheck=0@g' /etc/yum.repos.d/tailscale.repo
+    # wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo && \
+    # sed -i 's@gpgcheck=1@gpgcheck=0@g' /etc/yum.repos.d/tailscale.repo
 
 # Remove unneeded packages
 RUN rpm-ostree override remove \
@@ -81,9 +81,9 @@ RUN rpm-ostree install \
         ladspa-caps-plugins \
         ladspa-noise-suppression-for-voice \
         python3-icoextract \
-        tailscale \
+        # tailscale \
         btop \
-        fish \
+        # fish \
         xdotool \
         wmctrl \
         libcec \
@@ -99,7 +99,8 @@ RUN rpm-ostree install \
         twitter-twemoji-fonts \
         google-noto-sans-cjk-fonts \
         lato-fonts \
-        fira-code-fonts && \
+        fira-code-fonts \
+        langpacks-fr && \
     ln -s /usr/share/fonts/google-noto-sans-cjk-fonts /usr/share/fonts/noto-cjk && \
     rpm-ostree install $(curl https://api.github.com/repos/charmbracelet/gum/releases/latest | jq -r '.assets[] | select(.name| test(".*.x86_64.rpm$")).browser_download_url') && \
     wget https://raw.githubusercontent.com/scaronni/steam-proton-mf-wmv/master/installcab.py -O /usr/bin/installcab && \
@@ -208,7 +209,7 @@ RUN if grep -q "kinoite" <<< "${BASE_IMAGE_NAME}"; then \
         gnome-control-center \
         gnome-control-center-filesystem && \
     rpm-ostree install \
-        gnome-shell-extension-tailscale-gnome-qs \
+        # gnome-shell-extension-tailscale-gnome-qs \
         xwaylandvideobridge \
         steamdeck-backgrounds \
         gnome-randr-rust \
@@ -258,9 +259,9 @@ RUN if grep -qv "nvidia" <<< "${IMAGE_NAME}"; then \
         rocm-hip \
         rocm-opencl \
         rocm-clinfo \
-        waydroid \
+        # waydroid \
         weston && \
-    sed -i~ -E 's/=.\$\(command -v (nft|ip6?tables-legacy).*/=/g' /usr/lib/waydroid/data/scripts/waydroid-net.sh && \
+    # sed -i~ -E 's/=.\$\(command -v (nft|ip6?tables-legacy).*/=/g' /usr/lib/waydroid/data/scripts/waydroid-net.sh && \
     rm -f /usr/etc/modprobe.d/nvidia.conf \
 ; else \
     rm -f /usr/etc/modprobe.d/amdgpu.conf \
@@ -297,7 +298,7 @@ RUN /tmp/image-info.sh && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-vk_hdr_layer.repo && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ycollet-audinux.repo && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-rom-properties.repo && \
-    sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo && \
+    # sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/user.conf && \
     sed -i 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=15s/' /etc/systemd/system.conf && \
     mkdir -p /usr/etc/flatpak/remotes.d && \
@@ -310,7 +311,7 @@ RUN /tmp/image-info.sh && \
     systemctl disable rpm-ostreed-automatic.timer && \
     systemctl enable ublue-update.timer && \
     systemctl enable bazzite-hardware-setup.service && \
-    systemctl enable tailscaled.service && \
+    # systemctl enable tailscaled.service && \
     systemctl enable dev-hugepages1G.mount && \
     systemctl --global enable bazzite-user-setup.service && \
     if grep -q "kinoite" <<< "${BASE_IMAGE_NAME}"; then \
@@ -322,11 +323,11 @@ RUN /tmp/image-info.sh && \
         sed -i '/^PRETTY_NAME/s/Silverblue/Bazzite GNOME/' /usr/lib/os-release \
     ; fi && \
     if grep -qv "nvidia" <<< "${IMAGE_NAME}"; then \
-        systemctl disable waydroid-container.service && \
-        sed -i 's@Exec=waydroid first-launch@Exec=/usr/bin/waydroid-launcher first-launch\nX-Steam-Library-Capsule=/usr/share/applications/Waydroid/capsule.png\nX-Steam-Library-Hero=/usr/share/applications/Waydroid/hero.png\nX-Steam-Library-Logo=/usr/share/applications/Waydroid/logo.png\nX-Steam-Library-StoreCapsule=/usr/share/applications/Waydroid/store-logo.png\nX-Steam-Controller-Template=Desktop@g' /usr/share/applications/Waydroid.desktop && \
+        # systemctl disable waydroid-container.service && \
+        # sed -i 's@Exec=waydroid first-launch@Exec=/usr/bin/waydroid-launcher first-launch\nX-Steam-Library-Capsule=/usr/share/applications/Waydroid/capsule.png\nX-Steam-Library-Hero=/usr/share/applications/Waydroid/hero.png\nX-Steam-Library-Logo=/usr/share/applications/Waydroid/logo.png\nX-Steam-Library-StoreCapsule=/usr/share/applications/Waydroid/store-logo.png\nX-Steam-Controller-Template=Desktop@g' /usr/share/applications/Waydroid.desktop && \
         rm /usr/share/wayland-sessions/weston.desktop && \
-        wget https://raw.githubusercontent.com/Quackdoc/waydroid-scripts/main/waydroid-choose-gpu.sh -O /usr/bin/waydroid-choose-gpu && \
-        chmod +x /usr/bin/waydroid-choose-gpu \
+        # wget https://raw.githubusercontent.com/Quackdoc/waydroid-scripts/main/waydroid-choose-gpu.sh -O /usr/bin/waydroid-choose-gpu && \
+        # chmod +x /usr/bin/waydroid-choose-gpu \
     ; fi && \
     mkdir -p /usr/etc/default && \
     rm -rf \
