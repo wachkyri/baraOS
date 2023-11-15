@@ -74,54 +74,6 @@ else
     cp /usr/share/ublue-os/bazzite/themes/vgui2.json $HOME/.var/app/com.github.GradienceTeam.Gradience/config/presets/user/vgui2.json
   fi
 
-  if [[ $IMAGE_NAME =~ "deck" || $IMAGE_NAME =~ "ally" || $IMAGE_NAME =~ "framegame" ]]; then
-    echo 'Running setup for Silverblue on Steam Deck'
-
-    echo 'Disabling GNOME keyboard'
-    gsettings set org.gnome.desktop.interface toolkit-accessibility false
-    gnome-extensions enable block-caribou-36@lxylxy123456.ercli.dev
-
-    echo 'Enabling Appindicator Support'
-    gnome-extenisons enable appindicatorsupport@rgcjonas.gmail.com
-
-    echo 'Setting mouse input profile'
-    gsettings set org.gnome.desktop.peripherals.mouse accel-profile "flat"
-
-    echo 'Adjusting trackpad settings'
-    gsettings set org.gnome.desktop.peripherals.touchpad send-events "enabled"
-
-    echo 'Setting default power settings'
-    gsettings set org.gnome.desktop.session idle-delay 0
-    gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled true
-    gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
-    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 300
-    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 900
-    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type "suspend"
-    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "suspend"
-    gsettings set org.gnome.settings-daemon.plugins.power power-button-action "suspend"
-
-    echo 'Setting up templates'
-    if [[ ! -f "$HOME/Templates/vkBasalt.conf" ]]; then
-      ln -s /etc/vkBasalt.conf $HOME/Templates/vkBasalt.conf
-    fi
-    if [[ ! -f "$HOME/Templates/dxvk.conf" ]]; then
-      ln -s /etc/dxvk-example.conf $HOME/Templates/dxvk.conf
-    fi
-
-    echo 'Tweaking GNOME indexer'
-    mkdir -p $HOME/.steam
-    touch $HOME/.steam/.trackerignore
-    mkdir -p $HOME/.local/share/Steam
-    touch $HOME/.local/share/Steam/.trackerignore
-  fi
-fi
-
-# Steam Patch setup
-if [[ $IMAGE_NAME =~ "deck" || $IMAGE_NAME =~ "ally" || $IMAGE_NAME =~ "framegame" ]]; then
-  if [[ ! (":Jupiter:" =~ ":$SYS_ID:" || ":Galileo:" =~ ":$SYS_ID:")]]; then
-    echo 'Enabling Steam-Patch'
-    pkexec /usr/libexec/bazzite-enable-steam-patch "$USER"
-  fi
 fi
 
 # Previous images used Bazzite-Arch to run Steam, Lutris, and Protontricks on desktop images
