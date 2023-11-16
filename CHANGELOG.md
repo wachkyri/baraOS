@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.0](https://github.com/wachkyri/baraOS/compare/v2.0.2...v2.1.0) (2023-11-15)
+
+
+### Features
+
+* **deck:** Replace Website with Forums on Bazzite Portal ([#545](https://github.com/wachkyri/baraOS/issues/545)) ([e624854](https://github.com/wachkyri/baraOS/commit/e624854335fa663fbe34f1bb745baee19d307858))
+* **gnome:** Add bazzite-menu extension to desktop images, modify defaults to show gamemode option on deck builds. ([5831b1d](https://github.com/wachkyri/baraOS/commit/5831b1dac0fd429206d7b1e6c0b8b127a1db7b47))
+* Replace Website with Forums on Bazzite Portal ([#544](https://github.com/wachkyri/baraOS/issues/544)) ([5f8951d](https://github.com/wachkyri/baraOS/commit/5f8951d88fe97597f1b98b3573d80aa771fee953))
+
 ## [2.0.2](https://github.com/wachkyri/baraOS/compare/v2.0.2...v2.0.2) (2023-11-14)
 
 
