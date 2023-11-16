@@ -1,7 +1,7 @@
-name: Build Bazzite
+name: Build BaraOS
 on:
   schedule:
-    - cron: '40 16 * * 2,5' # 16:40 utc tues thurs
+    - cron: '15 6 * * 3,6' # At 06:15 on Wednesday and Saturday.
   pull_request:
     branches:
       - main
