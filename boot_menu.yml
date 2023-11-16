@@ -3,4 +3,4 @@ ublue_variants:
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: bazzite
-        info: Bazzite
+        info: BaraOS
