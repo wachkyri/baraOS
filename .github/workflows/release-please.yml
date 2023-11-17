@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: [Build]
+    workflows: [Build BaraOS]
     types: [completed]
 
 permissions:
