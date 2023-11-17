@@ -231,6 +231,7 @@ Ported SteamOS and ChimeraOS packages, among others used by Bazzite, are built o
 |[ryzenadj](https://github.com/FlyGoat/RyzenAdj)|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/ryzenadj/status_image/last_build.png?)|
 |[sddm-sugar-steamOS](https://github.com/JiayuanWen/sddm-sugar-steamOS)|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/sddm-sugar-steamOS/status_image/last_build.png?)|
 |[sdgyrodsu](https://github.com/kmicki/SteamDeckGyroDSU)|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/sdgyrodsu/status_image/last_build.png?)|
+|[steam-patch](https://github.com/KyleGospo/steam-patch)|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/steam-patch/status_image/last_build.png?)|
 |steamdeck-gnome-presets|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/steamdeck-gnome-presets/status_image/last_build.png?)|
 |steamdeck-kde-presets|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/steamdeck-kde-presets/status_image/last_build.png?)|
 |steamdeck-kde-presets-desktop|![Build Status](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/package/steamdeck-kde-presets-desktop/status_image/last_build.png?)|
@@ -270,7 +271,7 @@ cosign verify --key cosign.pub ghcr.io/ublue-os/bazzite
 
 Bazzite is a community effort and wouldn't exist without everyone's support. Below are some of the people who've helped us along the way:
 
-- [rei0260](https://discord.com/users/rei0260) - For creating our logo and overall branding.
+- [rei.svg](https://discord.com/users/rei.svg) - For creating our logo and overall branding.
 - [evlaV](https://gitlab.com/evlaV) - For making Valve's code available and for being [this person](https://xkcd.com/2347/).
 - [ChimeraOS](https://chimeraos.org/) - For gamescope-session and for valuable support along the way.
 - [Jovian-NixOS](https://github.com/Jovian-Experiments) - For supporting us with technical issues and for creating a similar project. Seriously, go check it out. It's our Nix-based cousin.

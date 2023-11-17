@@ -5,7 +5,7 @@ BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
 FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
 
 # SCRIPT VERSION
-USER_SETUP_VER=15
+USER_SETUP_VER=16
 USER_SETUP_VER_FILE="$HOME/.bazzite-configured"
 USER_SETUP_VER_RAN=$(cat $USER_SETUP_VER_FILE)
 USER_SETUP_FEDORA_VER_FILE="$HOME/.bazzite-configured-fedora-version"
