@@ -308,12 +308,12 @@ RUN /tmp/image-info.sh && \
     systemctl enable dev-hugepages1G.mount && \
     systemctl --global enable bazzite-user-setup.service && \
     if grep -q "kinoite" <<< "${BASE_IMAGE_NAME}"; then \
-        sed -i '/^PRETTY_NAME/s/Kinoite/Bazzite/' /usr/lib/os-release && \
+        sed -i '/^PRETTY_NAME/s/Kinoite/BaraOS/' /usr/lib/os-release && \
         systemctl --global enable com.system76.Scheduler.dbusproxy.service \
     ; else \
         rm /usr/share/applications/yad-icon-browser.desktop && \
         rm /usr/share/applications/com.github.rafostar.Clapper.desktop && \
-        sed -i '/^PRETTY_NAME/s/Silverblue/Bazzite GNOME/' /usr/lib/os-release \
+        sed -i '/^PRETTY_NAME/s/Silverblue/BaraOS GNOME/' /usr/lib/os-release \
     ; fi && \
     mkdir -p /usr/etc/default && \
     rm -rf \

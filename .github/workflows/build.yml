@@ -43,7 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         image_flavor: [main] # [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
-        base_name: [bazzite] # [bazzite, bazzite-deck]
+        base_name: [baraos] # [bazzite, bazzite-deck]
         base_image_name: [kinoite, silverblue] # [kinoite, silverblue]
         major_version: [39]
         include:
@@ -74,28 +74,8 @@ jobs:
           if [[ "${{ matrix.base_image_name }}" == "silverblue" ]]; then
               DESKTOP="-gnome"
           fi
-          if [[ "${{ matrix.base_name }}" == "bazzite-deck" ]]; then
-              if [[ "${{ matrix.image_flavor }}" == "asus" ]]; then
-                  echo "IMAGE_NAME=${{ format('{0}{1}', 'bazzite-ally', '${DESKTOP}') }}" >> $GITHUB_ENV
-              elif [[ "${{ matrix.image_flavor }}" == "framework" ]]; then
-                  echo "IMAGE_NAME=${{ format('{0}{1}', 'bazzite-framegame', '${DESKTOP}') }}" >> $GITHUB_ENV
-              else
-                  echo "IMAGE_NAME=${{ format('{0}{1}', 'bazzite-deck', '${DESKTOP}') }}" >> $GITHUB_ENV
-              fi
-          else
-              if [[ "${{ matrix.image_flavor }}" == "main" ]]; then
-                  echo "IMAGE_NAME=${{ format('{0}{1}', matrix.base_name, '${DESKTOP}') }}" >> $GITHUB_ENV
-              else
-                  echo "IMAGE_NAME=${{ format('{0}{1}-{2}', matrix.base_name, '${DESKTOP}', matrix.image_flavor) }}" >> $GITHUB_ENV
-              fi
-          fi
-          if [[ "${{ matrix.image_flavor }}" =~ "asus" ]]; then
-              echo "AKMODS_FLAVOR=asus" >> $GITHUB_ENV
-          elif [[ "${{ matrix.image_flavor }}" =~ "surface" ]]; then
-              echo "AKMODS_FLAVOR=surface" >> $GITHUB_ENV
-          else
-              echo "AKMODS_FLAVOR=main" >> $GITHUB_ENV
-          fi
+          echo "IMAGE_NAME=${{ format('{0}{1}', matrix.base_name, '${DESKTOP}') }}" >> $GITHUB_ENV
+          echo "AKMODS_FLAVOR=main" >> $GITHUB_ENV
 
       - name: Generate tags
         id: generate-tags
@@ -167,7 +147,7 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=Bazzite is an OCI image that serves as an alternative operating system for the Steam Deck, and a ready-to-game SteamOS-like for desktop computers, living room home theater PCs, and numerous other handheld PCs.
+            org.opencontainers.image.description=BaraOS is an OCI image based on ublue-OS and Bazzite 
             io.artifacthub.package.readme-url=https://bazzite.gg/
             io.artifacthub.package.logo-url=https://raw.githubusercontent.com/ublue-os/bazzite/main/repo_content/logo.png
 
