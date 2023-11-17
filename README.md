@@ -8,7 +8,6 @@
 # Table of Contents
 - [Features for **All** Bazzite Images](https://github.com/ublue-os/bazzite#about--features)
   - [Features for **Desktop** Images](https://github.com/ublue-os/bazzite#desktop)
-  - [Features for **Steam Deck / HTPC** Images](https://github.com/ublue-os/bazzite#steam-deckhome-theater-pcs-htpcs)
   - [Features for **GNOME** Images](https://github.com/ublue-os/bazzite#gnome)
   - [Features from Upstream](https://github.com/ublue-os/bazzite#features-from-upstream)
 - [Why & Frequently Asked Questions](https://github.com/ublue-os/bazzite#why)
@@ -22,40 +21,7 @@
 
 ## About & Features
 
-Bazzite is an OCI image that serves as an alternative operating system for the [Steam Deck](https://www.steamdeck.com/), and a ready-to-game SteamOS-like for desktop computers and living room home theater PCs.
-
-Bazzite is built from [ublue-os/main](https://github.com/ublue-os/main) and [ublue-os/nvidia](https://github.com/ublue-os/nvidia) using [Fedora](https://fedoraproject.org/) technology, which means expanded hardware support and built in drivers are included. Additionally, Bazzite adds the following features:
-
-- Proprietary Nvidia drivers pre-installed.
-- Full hardware accelerated codec support for H264 decoding.
-- Full support for AMD's ROCM OpenCL/HIP run-times.
-- [xone](https://github.com/medusalix/xone), [xpadneo](https://github.com/atar-axis/xpadneo), and [xpad-noone](https://github.com/ublue-os/xpad-noone) drivers for Xbox controllers.
-- Full support for [DisplayLink](https://www.synaptics.com/products/displaylink-graphics).
-- Includes Valve's KDE themes from SteamOS.
-- [LatencyFleX](https://github.com/ishitatsuyuki/LatencyFleX), [vkBasalt](https://github.com/DadSchoorse/vkBasalt), [MangoHud](https://github.com/flightlessmango/Mangohud), and [OBS VkCapture](https://github.com/nowrep/obs-vkcapture) installed and available by default
-- Support for [Wallpaper Engine](https://www.wallpaperengine.io/en). <sub><sup>(Only on KDE)</sup></sub>
-- [ROM Properties Page shell extension](https://github.com/GerbilSoft/rom-properties) included.
-- Full support for [Winesync/Fastsync/NTsync](https://github.com/Frogging-Family/wine-tkg-git/issues/936).
-- [Distrobox](https://github.com/89luca89/distrobox) preinstalled with automatic updates for created containers.
-- Automated `duperemove` and `rmlint` services for reducing the disk space used by wine prefix contents.
-- Support for HDMI CEC via [libCEC](https://libcec.pulse-eight.com/).
-- [System76-Scheduler](https://github.com/pop-os/system76-scheduler) preinstalled, providing automatic process priority tweaks to your focused application and keeping CPU time for background processes to a minimum.
-- Customized System76-Scheduler config with additional rules.
-- Uses [Google's BBR TCP congestion control](https://github.com/google/bbr) by default.
-- [Input Remapper](https://github.com/sezanzeb/input-remapper) preinstalled and enabled. <sub><sup>(Available but default-disabled on the Deck variant)</sup></sub>
-- Bazzite Portal provides an easy way to install numerous applications and tweaks, including installing [CoreCtrl](https://gitlab.com/corectrl/corectrl) and [GreenWithEnvy](https://gitlab.com/leinardi/gwe).
-- [Nix](https://nixos.org/) package manager with [Fleek](https://getfleek.dev/) optionally available for install via Bazzite Portal.
-- [Brew](https://brew.sh/) package manager optionally available for install via Bazzite Portal.
-- [Waydroid](https://waydro.id/) preinstalled for running Android apps. Set it up with this [quick guide](https://universal-blue.discourse.group/docs?topic=32). Future releases will offer to set this up for you through Bazzite Portal. <sub><sup>(Not available on Nvidia builds)</sup></sub>
-- Manage applications using [Flatseal](https://github.com/tchx84/Flatseal), [Warehouse](https://github.com/flattool/warehouse), and [Gear Lever](https://github.com/mijorus/gearlever).
-- [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB) i2c-piix4 and i2c-nct6775 drivers for controlling RGB on certain motherboards.
-- [OpenRazer](https://openrazer.github.io) drivers built in, Select OpenRazer in Bazzite Portal or run `ujust install-openrazer` in a terminal to begin using it.
-- [OpenTabletDriver](https://opentabletdriver.net/) udev rules built in, with the full software suite installable via Bazzite Portal or by running `ujust install-opentabletdriver` in a terminal.
-- [GCAdapter_OC](https://github.com/hannesmann/gcadapter-oc-kmod) driver for overclocking Nintendo's Gamecube Controller Adapter to 1000hz polling.
-- Out of the box support for [Wooting](https://wooting.io/) keyboards.
-- Built in support for Southern Islands <sub><sup>(HD 7000)</sup></sub> and Sea Islands <sub><sup>(HD 8000)</sup></sub> AMD GPUs under the `amdgpu` driver.
-- A fix is available for [a 32-bit Source 1 engine game bug <sub><sup>(IE: TF2)</sup></sub>](https://github.com/ValveSoftware/Source-1-Games/issues/5043) that makes the game crash on launch - `ujust patch-source1-tcmalloc`
-- [XwaylandVideoBridge](https://invent.kde.org/system/xwaylandvideobridge) is available for Discord screensharing on Wayland.
+BaraOS is an OCI image built from [ublue-os/main](https://github.com/ublue-os/main) and forked from the [Bazzite](https://github.com/ublue-os/bazzite) project. It is an experimental project to tailor an OS for my own purpose. I don't recommend using it.
 
 ### Desktop
 
@@ -64,7 +30,7 @@ Common variant available as `bazzite`, suitable for desktop computers.
 - Automatic updates for the OS, Flatpaks, Nix packages <sup><sub>(Via Fleek)</sub></sup>, and all Distrobox containers.
 
 > [!IMPORTANT]  
-> **ISOs can be downloaded from our releases page [here](https://github.com/ublue-os/bazzite/releases), and a helpful install guide can be found [here](https://universal-blue.discourse.group/docs?topic=30).** If you experience any issues with installing Bazzite, then check out our [troubleshoot guide](https://universal-blue.discourse.group/docs?topic=34).
+> **ISOs can be downloaded from the releases page [here](https://github.com/ublue-os/bazzite/releases), and a helpful install guide can be found [here](https://universal-blue.discourse.group/docs?topic=30).** If you experience any issues with installing Bazzite, then check out the [troubleshoot guide](https://universal-blue.discourse.group/docs?topic=34).
 
 If you're on an existing Universal Blue image follow [these instructions](https://universal-blue.org/images/#image-list). To rebase an existing upstream Fedora Silverblue/Kinoite ostree system to this image:
 
@@ -72,60 +38,7 @@ If you're on an existing Universal Blue image follow [these instructions](https:
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/bazzite:latest
 ```
 
-or for devices with Nvidia GPUs:
-
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/bazzite-nvidia:latest
-```
-
 **For users with Secure Boot enabled:** Run `ujust enroll-secure-boot-key` and enter the password `ublue-os` if prompted to enroll the required key.
-
-### Steam Deck/Home Theater PCs (HTPCs)
-> [!IMPORTANT]  
-Devices that are NOT the Steam Deck can still use the bazzite-deck images, but must use an AMD/Intel GPU.
-
-Variant designed for usage as an alternative to SteamOS on the Steam Deck, and for a console-like experience on HTPCs, available as `bazzite-deck`:
-
-- Directly boots to Gamemode matching SteamOS's behavior.
-- **Automatic `duperemove` greatly trims the size of compatdata.**
-- **Latest version of Mesa creates smaller shader caches and does not require them to prevent stutter.**
-- **Able to be booted even if the drive is full.**
-- **Support for every language supported by upstream Fedora.**
-- **Uses Wayland on the desktop with [support for Steam input](https://github.com/Supreeeme/extest).**
-- Features ported versions of most SteamOS packages, including drivers, firmware updaters, and fan controllers [from the evlaV repository](https://gitlab.com/evlaV).
-- Patched Mesa for proper framerate control from Gamescope.
-- Comes with patches from [SteamOS BTRFS](https://gitlab.com/popsulfr/steamos-btrfs) for full BTRFS support for the SD card by default.
-- Ships with a ported copy of [SDGyroDSU](https://github.com/kmicki/SteamDeckGyroDSU), enabled by default.
-- Option to install [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader), [EmuDeck](https://www.emudeck.com/), [RetroDECK](https://retrodeck.net/), and [ProtonUp-Qt](https://davidotek.github.io/protonup-qt/), among numerous other useful packages on installation.
-- Custom update system allows for the OS, Flatpaks, Nix packages <sup><sub>(Via Fleek)</sub></sup>, and Distrobox images to be updated directly from the Gamemode UI.
-- Built in support for Windows dual-boot thanks to Fedora's installation of GRUB being left intact.
-- Update break something? Easily roll back to the previous version of Bazzite thanks to `rpm-ostree`'s rollback functionality. You can even select previous images at boot.
-- Steam and Lutris preinstalled on the image as layered packages.
-- [Discover Overlay](https://github.com/trigg/Discover) for Discord pre-installed and automatically launches in both Gamemode and on the Desktop if Discord is installed. [View the official documentation here](https://trigg.github.io/Discover/bazzite).
-- Uses ZRAM<sub><sup>(4GB)</sup></sub> with the ZSTD compression algorithm by default with the option to switch back to a 1GB swap file and set a custom size for it if desired.
-- Kyber I/O scheduler to prevent I/O starvation when installing games or during background `duperemove` and `rmlint` processes.
-- Applies SteamOS's kernel parameters.
-- Color calibrated display profiles for matte and reflective Steam Deck screens included.
-- Default-disabled power-user features, including:
-    - Service for low-risk undervolting of the Steam Deck via [RyzenAdj](https://github.com/FlyGoat/RyzenAdj) and [Ryzen SMU](https://gitlab.com/leogx9r/ryzen_smu), see `ryzenadj.service` and `/etc/default/ryzenadj`.
-    - Service for limiting the max charge level of the battery, see `batterylimit.service` and `/etc/default/batterylimit`. <sup><sub>(Works even when the device is off)</sub></sup>
-    - Built in support for display overclocking. For example, add `GAMESCOPE_OVERRIDE_REFRESH_RATE=40,70` to `/etc/environment`.
-    - Ability to use X11 on the desktop if desired by editing `/etc/default/desktop-wayland`.
-    - 32GB RAM mod your Steam Deck? Enjoy double the maximum VRAM amount, automatically applied. <sup><sub>(Can you share your soldering skills?)</sub></sup>
-- Steam Deck hardware-specific services can be disabled by running `ujust disable-deck-services` in the terminal, useful for trying this image on other handhelds or for use on HTPCs.
-- More information can be found [here](https://universal-blue.discourse.group/docs?topic=37) on the Bazzite Steam Deck images.
-
-> [!WARNING]  
-> **Due to an upstream bug, Bazzite cannot be used on Steam Decks with 64GB eMMC storage at this time. Upgrading the storage resolves the issue.**
-
-> [!IMPORTANT]  
-> **ISOs can be downloaded from our releases page [here](https://github.com/ublue-os/bazzite/releases), and a helpful install guide can be found [here](https://universal-blue.discourse.group/docs?topic=30).** If you experience any issues with installing Bazzite, then check out our [troubleshoot guide](https://universal-blue.discourse.group/docs?topic=34).
-
-If you're on an existing Universal Blue image follow [these instructions](https://universal-blue.org/images/#image-list). To rebase an existing upstream Fedora Silverblue/Kinoite ostree system to this image: 
-
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/bazzite-deck:latest
-```
 
 ### GNOME
 
@@ -146,21 +59,6 @@ To rebase an existing ostree system to the **desktop** release:
 
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/bazzite-gnome:latest
-```
-
-To rebase an existing ostree system to the **desktop with Nvidia drivers** release:
-
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/bazzite-gnome-nvidia:latest
-```
-
-> [!WARNING]  
-> **Due to an upstream bug, Bazzite cannot be used on Steam Decks with 64GB eMMC storage at this time.**
-
-To rebase an existing ostree system to the **Steam Deck/HTPC** release: 
-
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/bazzite-deck-gnome:latest
 ```
 
 ### Features from Upstream
