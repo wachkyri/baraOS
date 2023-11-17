@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.0](https://github.com/wachkyri/baraOS/compare/v2.1.0...v2.2.0) (2023-11-17)
+
+
+### Features
+
+* Add LE stylized Bazzite logo ([7ee568a](https://github.com/wachkyri/baraOS/commit/7ee568a287592c92d798777d4b348c6def35ca09))
+* Add LE stylized Steam Deck logo ([50c221b](https://github.com/wachkyri/baraOS/commit/50c221be213be0c97bd5504d77971c1dc5c4ac38))
+* **deck:** Add iomem=relaxed karg automatically on handhelds that require RyzenAdj for TDP control ([38a61d0](https://github.com/wachkyri/baraOS/commit/38a61d08a5cacd601c01bcabba52ea2788f2f74d))
+* **deck:** Switch to new fork of steam-patch ([bd245b2](https://github.com/wachkyri/baraOS/commit/bd245b26019feb8be43060eb1a077d4229f13685))
+
+
+### Bug Fixes
+
+* **deck:** Correct EmuDeck install on GNOME builds ([762db3c](https://github.com/wachkyri/baraOS/commit/762db3cb643eb139dd4194d44a35434507b094bf))
+
 ## [2.1.0](https://github.com/wachkyri/baraOS/compare/v2.0.2...v2.1.0) (2023-11-15)
 
 
