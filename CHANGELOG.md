@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/wachkyri/baraOS/compare/v2.2.0...v2.3.0) (2023-11-20)
+
+
+### Features
+
+* Add WineZGUI, an extremely convenient way to launch double-click simple Windows applications that don't require special considerations for their prefix. ([a9c5cda](https://github.com/wachkyri/baraOS/commit/a9c5cda8963c8c3da2f8de91a9a062efd924cb57))
+
 ## [2.2.0](https://github.com/wachkyri/baraOS/compare/v2.1.0...v2.2.0) (2023-11-17)
 
 
