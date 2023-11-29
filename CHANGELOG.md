@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.3.0](https://github.com/wachkyri/baraOS/compare/v2.2.0...v2.3.0) (2023-11-29)
+
+
+### Features
+
+* add initramfs rebuilding with support for user defined initramfs args ([#586](https://github.com/wachkyri/baraOS/issues/586)) ([0a97588](https://github.com/wachkyri/baraOS/commit/0a9758813f386cdd9621730f932f0d38bb52fd27))
+* add just syntax checker ([70f7aae](https://github.com/wachkyri/baraOS/commit/70f7aae2641ca8e83cfd54811891366559b3f106))
+* Add WineZGUI, an extremely convenient way to launch double-click simple Windows applications that don't require special considerations for their prefix. ([a9c5cda](https://github.com/wachkyri/baraOS/commit/a9c5cda8963c8c3da2f8de91a9a062efd924cb57))
+* **deck:** Auto-disable bios updates for 32GB RAM decks. ([d1c6022](https://github.com/wachkyri/baraOS/commit/d1c60228dee6e975ca0db67906c8ee9840d6a6fc))
+* **deck:** Implement support for the DeckHD ([#573](https://github.com/wachkyri/baraOS/issues/573)) ([4dadf8c](https://github.com/wachkyri/baraOS/commit/4dadf8c2fea6a420a9e7924057264f59e576a9e0))
+* **deck:** Include new galileo-mura package ([12b2875](https://github.com/wachkyri/baraOS/commit/12b2875b847affac874105292355564d096bc98f))
+* **deck:** Switch to new steamdeck-dsp package for audio. ([460f111](https://github.com/wachkyri/baraOS/commit/460f1110f2acd0e990a962f239ade63f5543b1f9))
+* **desktop:** Restore displaylink on desktop images, leave off of deck images until issues with MangoHUD are resolved. ([d8ee043](https://github.com/wachkyri/baraOS/commit/d8ee04376d115568354a44aa2c977855e410ab37))
+* **desktop:** Switch from CoreCtrl to LACT as the default AMD overclocking solution. ([083dda2](https://github.com/wachkyri/baraOS/commit/083dda26c6f7935d1e6a07c53bf629c5924c83a7))
+* Preinstall GOverlay ([#572](https://github.com/wachkyri/baraOS/issues/572)) ([f21da88](https://github.com/wachkyri/baraOS/commit/f21da887538959088b4554c95591a714531533a9))
+
+
+### Bug Fixes
+
+* Always return pipewire replacement as true ([72b73e8](https://github.com/wachkyri/baraOS/commit/72b73e884e983c2a83688fe01be7395d2dd40772))
+* **autologin/return-to-gamemode:** Don't assume path to home directory ([#571](https://github.com/wachkyri/baraOS/issues/571)) ([b35b1f2](https://github.com/wachkyri/baraOS/commit/b35b1f2ea09f85512dd65f472b57902548f6ef3a))
+* **deck:** Improve just scripts for bios handling ([ab5a503](https://github.com/wachkyri/baraOS/commit/ab5a5038ebd762a7568e3b1f82fafe334b4eac7c))
+* **deck:** Update jupiter-hw-support package ([0b35eda](https://github.com/wachkyri/baraOS/commit/0b35edaa6c3d548a066924ebf007b121967f6b0f))
+* Drop DDControl as a default, caused unresponsive monitors for some users. ([d6dede7](https://github.com/wachkyri/baraOS/commit/d6dede706abfe8f86265b9ee6dbb5b9a69443732))
+* **hardware-setup:** Set default target to graphical, fixes rebase from base image ([#568](https://github.com/wachkyri/baraOS/issues/568)) ([7131005](https://github.com/wachkyri/baraOS/commit/71310055eeed434678926ebd6d7e39687cfdf7bb))
+* Install proper 32 bit glibc package ([0b2c9af](https://github.com/wachkyri/baraOS/commit/0b2c9af2a09138b630f0cdc694e56d22eb86246a))
+* **legion:** Disable X11 by default to correct issues with display rotation ([f6f407e](https://github.com/wachkyri/baraOS/commit/f6f407e8e16e944fae5b0a7b5ced8877e241bbb4))
+* **nvidia:** Remove older 32 bit glibc package ([290f766](https://github.com/wachkyri/baraOS/commit/290f766affc9f87afc6758026abb5432549a5097))
+* Reinstall pipewire from Fedora updates ([06d49d9](https://github.com/wachkyri/baraOS/commit/06d49d96738bbc7919a32a88835ff2b01a234019))
+* Temporarily remove xwaylandvideobridge, fixes white box issue ([e9e6087](https://github.com/wachkyri/baraOS/commit/e9e60873708660f971d6d0d090190e35440d4e9c))
+
 ## [2.2.0](https://github.com/wachkyri/baraOS/compare/v2.1.0...v2.2.0) (2023-11-17)
 
 
