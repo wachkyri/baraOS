@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.3.1](https://github.com/wachkyri/baraOS/compare/v2.3.0...v2.3.1) (2023-11-30)
+
+
+### Bug Fixes
+
+* **deck:** Correct rotation of Plymouth on Galileo ([e2be1e6](https://github.com/wachkyri/baraOS/commit/e2be1e6c4084517b7f20d4363dca6e52684e81b1))
+* **deck:** Include wifi firmware for OLED deck ([b1337ff](https://github.com/wachkyri/baraOS/commit/b1337ffbed37a7a3a32a84f33116e580175d73ee))
+* **deck:** Patch path to ladspa plugin in steamdeck-dsp ([bdb10d1](https://github.com/wachkyri/baraOS/commit/bdb10d118512dd742e61eb58ba5ef7d664531944))
+* **deck:** Remove steamdeck-dsp for now ([086c17c](https://github.com/wachkyri/baraOS/commit/086c17c1f8a9ad24410098f720e8d796c51abd1d))
+
 ## [2.3.0](https://github.com/wachkyri/baraOS/compare/v2.2.0...v2.3.0) (2023-11-29)
 
 
