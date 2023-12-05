@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.4.0](https://github.com/wachkyri/baraOS/compare/v2.3.0...v2.4.0) (2023-12-05)
+
+
+### Features
+
+* Add patched Xwayland for Nvidia 545. ([e9f304b](https://github.com/wachkyri/baraOS/commit/e9f304bfb538d9b46a91f443997a5c39408db01a))
+
+
+### Bug Fixes
+
+* **boot menu:** Add missing ASUS NVIDIA entries ([2f3d8c5](https://github.com/wachkyri/baraOS/commit/2f3d8c59c168e2c2905ae190045d6b4563d9a05f))
+* **boot menu:** Correct broken GNOME Surface entries ([febb15a](https://github.com/wachkyri/baraOS/commit/febb15a5ef819b840adec5ad92db7316ed7f0eeb))
+* **boot menu:** Correct GNOME Surface sublabels too ([d2d9366](https://github.com/wachkyri/baraOS/commit/d2d93663e6f9d3730ecf453de2549b2aeb045b8f))
+* **deck:** Add udev rule for Galileo brightness control ([b4b18bd](https://github.com/wachkyri/baraOS/commit/b4b18bdcbe7b7abae95f62f9d2c469ae8f24bf5c))
+* **deck:** Correct rotation of Plymouth on Galileo ([e2be1e6](https://github.com/wachkyri/baraOS/commit/e2be1e6c4084517b7f20d4363dca6e52684e81b1))
+* **deck:** Include wifi firmware for OLED deck ([b1337ff](https://github.com/wachkyri/baraOS/commit/b1337ffbed37a7a3a32a84f33116e580175d73ee))
+* **deck:** Missing characters on Bazzite Portal ([#599](https://github.com/wachkyri/baraOS/issues/599)) ([7608c6e](https://github.com/wachkyri/baraOS/commit/7608c6ea38c3d7541c702899a29213567f31a56e))
+* **deck:** Patch path to ladspa plugin in steamdeck-dsp ([bdb10d1](https://github.com/wachkyri/baraOS/commit/bdb10d118512dd742e61eb58ba5ef7d664531944))
+* **deck:** Remove steamdeck-dsp for now ([086c17c](https://github.com/wachkyri/baraOS/commit/086c17c1f8a9ad24410098f720e8d796c51abd1d))
+* **deck:** Restore audio changes on main, this is in lieu of steamdeck-dsp which will remain on :testing for now. ([58ddbf4](https://github.com/wachkyri/baraOS/commit/58ddbf4a3d0d20fd3236f4944311502d752d7922))
+* **gnome:** Cleanup dconf files, add service to apply. ([b9b1e42](https://github.com/wachkyri/baraOS/commit/b9b1e42980c7c0dfef830e251f43df7aa70a9950))
+* Missing characters on Bazzite Portal ([#600](https://github.com/wachkyri/baraOS/issues/600)) ([8bda75e](https://github.com/wachkyri/baraOS/commit/8bda75e5b4a887ee2ab1b8218ee9de3a23702b1f))
+* Properly handle asus-nvidia images in enable-supergfxctl ([53398e9](https://github.com/wachkyri/baraOS/commit/53398e92f3c5bf163a5e243a99c93a0060771624))
+
 ## [2.3.0](https://github.com/wachkyri/baraOS/compare/v2.2.0...v2.3.0) (2023-11-29)
 
 
